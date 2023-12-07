@@ -16,13 +16,9 @@ if __name__ == '__main__':
     agent = QLearningAgent(
         alpha=cst.const.ALPHA,
         gamma=cst.const.GAMMA,
-        epsilon=cst.const.EPSILON,
+        tau=cst.const.TAU,
         actions=cst.const.ACTIONS,
-        observation=ini_state,
-        la_state_num=cst.const.LA_STATE_NUM,
-        min_x=cst.const.MIN_X,
-        max_x=cst.const.MAX_X,
-        theta=cst.const.THETA
+        observation=ini_state
     )
     
     opt_act_num = 0
@@ -41,12 +37,11 @@ if __name__ == '__main__':
         opt_act_num = 0
         state = env.reset()
         agent.observe(state)    #初期状態に
-    
-    #Q値保存
-    agent.save_q('Qvalue_la.npy')
+        
+    agent.save_q('Qvalue_softmax.npy')
     #結果のプロット
     plt.plot(np.arange(cst.const.NB_EPISODE), np.array(opt_act_prob))
     plt.xlabel("episode")
     plt.ylabel("optimal action times")
-    plt.savefig("opt_act_result_la.jpg")
+    plt.savefig("opt_act_result_softmax.jpg")
     plt.show()
