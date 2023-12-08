@@ -7,6 +7,7 @@ import numpy as np
 #定数
 const.STATE_NUM = 3 #状態1, 2, 3が街A, B, Cにいる状態 (プログラム上では0 or 1 or 2)
 const.ACT_NUM = 3 #1:通行人探し 2:タクスタ 3:無線(同上)
+const.NB_REPEAT = 50      #実験の繰り返し数
 const.NB_EPISODE = 100    # エピソード数
 const.NB_STEP = 300
 const.EPSILON = .1    # 探索率

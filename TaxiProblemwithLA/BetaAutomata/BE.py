@@ -23,7 +23,7 @@ class BE:
     def __calc_new_lamda(self, resp_x, gamma):  #各ラムダを更新
         if resp_x < self.min_x:
             resp_x = self.min_x
-        x = (resp_x - self.min_x) / (self.max_x - self.min_x)   #TODO
+        x = (resp_x - self.min_x) / (self.max_x - self.min_x)
         self.lamda = self.lamda * (self.myu**x * (1-self.myu) ** (1-x)) ** gamma
     
     def __nomalization_lamda(self): #正規化
