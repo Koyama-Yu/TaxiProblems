@@ -1,6 +1,5 @@
-"""おもちゃ屋問題(Toy-Problem)シミュレーション"""
+"""タクシー問題(Taxi-Problem)シミュレーション"""
 
-import random
 import numpy as np
 import matplotlib.pyplot as plt
 from qLearningAgent import QLearningAgent
@@ -39,6 +38,8 @@ if __name__ == '__main__':
         agent.observe(state)    #初期状態に
         
     agent.save_q('Qvalue_softmax.npy')
+    np.save('OptimalActionProbability_Ave_Softmax.npy', opt_act_prob)
+    
     #結果のプロット
     plt.plot(np.arange(cst.const.NB_EPISODE), np.array(opt_act_prob))
     plt.xlabel("episode")

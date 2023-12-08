@@ -8,8 +8,8 @@ import numpy as np
 const.STATE_NUM = 3 #状態1, 2, 3が街A, B, Cにいる状態 (プログラム上では0 or 1 or 2)
 const.ACT_NUM = 3 #1:通行人探し 2:タクスタ 3:無線(同上)
 const.NB_EPISODE = 100    # エピソード数
-const.NB_STEP = 10  #TODO 後で変更
-const.TAU = .1    # 温度
+const.NB_STEP = 300
+const.TAU = 10.    # 温度
 const.ALPHA = .1      # 学習率
 const.GAMMA = .90     # 割引率
 const.ACTIONS = np.arange(const.ACT_NUM)    #行動集合

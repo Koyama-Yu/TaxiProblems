@@ -32,11 +32,11 @@ class QLearningAgent:
     def act(self):
         #softmax行動選択
         values = self.q_values[self.state]
-        sum_exp_values = sum([np.exp(v/self.tau) for v in values])   # softmax選択の分母の計算
-        print(sum_exp_values)
-        p = [np.exp(v/self.tau)/sum_exp_values for v in values]      # 確率分布の生成
+        max_value = np.max(values)  #オーバーフロー対策
+        exp_values = np.exp((values - max_value) / self.tau)
+        sum_exp_values = np.sum(exp_values)
+        p = exp_values / sum_exp_values  # 確率分布の生成
 
-        print(p)    #TODO なぜかpでnanになる
         action = np.random.choice(np.arange(len(values)), p=p)  # 確率分布pに従ってランダムで選択   
 
         self.previous_action = action
