@@ -39,13 +39,14 @@ if __name__ == '__main__':
             opt_act_num = 0
             state = env.reset()
             agent.observe(state)    #初期状態に
+            
     opt_act_prob_ave = opt_act_prob_ave / cst.const.NB_REPEAT
-    agent.save_q('Qvalue_softmax.npy')  #! ファイルの名前は適宜変更
-    np.save('OptimalActionProbability_Ave_Softmax.npy', opt_act_prob_ave)   #! ファイルの名前は適宜変更
+    agent.save_q(f'./Qvalues/Qvalue_softmax_t{cst.const.TAU}.npy')
+    np.save(f'./probabilities/OptimalActionProbability_Ave_Softmax_t{cst.const.TAU}.npy', opt_act_prob_ave)
     
     #結果のプロット
     plt.plot(np.arange(cst.const.NB_EPISODE), np.array(opt_act_prob_ave))
     plt.xlabel("episode")
-    plt.ylabel("optimal action times")
-    plt.savefig("opt_act_result_softmax.jpg")
+    plt.ylabel(f"optimal action times ( T = {cst.const.TAU})")
+    plt.savefig(f"./graphs/opt_act_result_softmax_t{cst.const.TAU}.jpg")
     plt.show()

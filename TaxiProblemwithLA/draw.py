@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-q_value = np.load('Qvalue_la.npy', allow_pickle=True)
+theta = 10
+q_value = np.load(f'./Qvalues/Qvalue_la_theta{theta}.npy', allow_pickle=True)
 print(q_value)

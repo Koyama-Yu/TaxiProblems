@@ -57,12 +57,12 @@ if __name__ == '__main__':
             agent.observe(state)    #初期状態に
     opt_act_prob_ave = opt_act_prob_ave / cst.const.NB_REPEAT
     #Q値保存
-    agent.save_q('Qvalue_la.npy')  #! ファイルの名前は適宜変更
-    np.save('OptimalActionProbability_Ave_LA.npy', opt_act_prob_ave)   #! ファイルの名前は適宜変更
+    agent.save_q(f'./Qvalues/Qvalue_la_theta{cst.const.THETA}.npy')
+    np.save(f'./probabilities/OptimalActionProbability_Ave_LA_theta{cst.const.THETA}.npy', opt_act_prob_ave)
     
     #結果のプロット
     plt.plot(np.arange(cst.const.NB_EPISODE), np.array(opt_act_prob_ave))
     plt.xlabel("episode")
-    plt.ylabel("optimal action times")
-    plt.savefig("opt_act_result_la.jpg")
+    plt.ylabel(f"optimal action times (θ = {cst.const.THETA})")
+    plt.savefig(f"./graphs/opt_act_result_la_theta{cst.const.THETA}.jpg")
     plt.show()

@@ -47,13 +47,15 @@ if __name__ == '__main__':
             opt_act_num = 0
             state = env.reset()
             agent.observe(state)    #初期状態に
+            
     opt_act_prob_ave = opt_act_prob_ave / cst.const.NB_REPEAT
-    agent.save_q('Qvalue_epsilon.npy')
-    np.save('OptimalActionProbability_Ave_Epsilon.npy', opt_act_prob_ave)
+    #Q値保存
+    agent.save_q(f'./Qvalues/Qvalue_epsilon{cst.const.EPSILON}.npy')
+    np.save(f'./probabilities/OptimalActionProbability_Ave_Epsilon{cst.const.EPSILON}.npy', opt_act_prob_ave)
     
     #結果のプロット
     plt.plot(np.arange(cst.const.NB_EPISODE), np.array(opt_act_prob_ave))
     plt.xlabel("episode")
-    plt.ylabel("optimal action times")
-    plt.savefig("opt_act_result_epsilon.jpg")
+    plt.ylabel(f"optimal action times (ε = {cst.const.EPSILON})")
+    plt.savefig(f"./graphs/opt_act_result_epsilon{cst.const.EPSILON}.jpg")
     plt.show()
