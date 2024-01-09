@@ -15,8 +15,8 @@ episodes_la = np.load(fname_la)
 
 plt.rcParams['xtick.direction'] = 'in'
 plt.rcParams['ytick.direction'] = 'in'
-plt.plot(np.arange(0, episode_num), episodes_eps, label='epsilon', color='limegreen')
-plt.plot(np.arange(0, episode_num), episodes_la, label='LQ', color='dodgerblue')
+plt.plot(np.arange(0, episode_num), episodes_eps, ls='--', label='ε-greedy', color='dodgerblue')
+plt.plot(np.arange(0, episode_num), episodes_la, ls='-',label='LQ', color='dodgerblue')
 #plt.plot(np.arange(0, step_num - 200), steps1[:300], color = 'dodgerblue')
 #plt.plot(np.arange(0, step_num - 200), steps2[:300], color = 'salmon')
 #plt.axhline(ave, ls = "-.", color = "slateblue")

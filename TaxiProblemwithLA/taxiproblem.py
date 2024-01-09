@@ -55,6 +55,7 @@ if __name__ == '__main__':
             opt_act_num = 0
             state = env.reset()
             agent.observe(state)    #初期状態に
+            
     opt_act_prob_ave = opt_act_prob_ave / cst.const.NB_REPEAT
     #Q値保存
     agent.save_q(f'./Qvalues/Qvalue_la_theta{cst.const.THETA}.npy')

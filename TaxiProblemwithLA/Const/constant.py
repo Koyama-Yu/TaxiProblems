@@ -54,6 +54,6 @@ const.state_set = {'City A':0, 'City B':1, 'City C':2}
 const.act_set = {'Find':0, 'Stand':1, 'Call':2}
 const.start_state = const.state_set['City A']
 const.LA_STATE_NUM = 200 #LA状態数
-const.THETA = 5
+const.THETA = 1
 const.MAX_X = 150
 const.MIN_X = 100
