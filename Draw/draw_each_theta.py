@@ -20,11 +20,11 @@ episodes_theta10 = np.load(fname_theta10)
 
 plt.rcParams['xtick.direction'] = 'in'
 plt.rcParams['ytick.direction'] = 'in'
-plt.plot(np.arange(0, episode_num), episodes_theta1, ls='-', label='θ = 1', color='dodgerblue')
-plt.plot(np.arange(0, episode_num), episodes_theta2, ls='--', label='θ = 2', color='dodgerblue')
-plt.plot(np.arange(0, episode_num), episodes_theta5, ls=':', label='θ = 5', color='dodgerblue')
-plt.plot(np.arange(0, episode_num), episodes_theta10, ls='-.', label='θ = 10', color='dodgerblue')
-#plt.plot(np.arange(0, step_num - 200), steps1[:300], color = 'dodgerblue')
+plt.plot(np.arange(0, episode_num), episodes_theta1, ls='-', label='θ = 1', color='royalblue')
+plt.plot(np.arange(0, episode_num), episodes_theta2, ls='--', label='θ = 2', color='royalblue')
+plt.plot(np.arange(0, episode_num), episodes_theta5, ls=':', label='θ = 5', color='royalblue')
+plt.plot(np.arange(0, episode_num), episodes_theta10, ls='-.', label='θ = 10', color='royalblue')
+#plt.plot(np.arange(0, step_num - 200), steps1[:300], color = 'royalblue')
 #plt.plot(np.arange(0, step_num - 200), steps2[:300], color = 'salmon')
 #plt.axhline(ave, ls = "-.", color = "slateblue")
 #plt.xlim(0, 100)

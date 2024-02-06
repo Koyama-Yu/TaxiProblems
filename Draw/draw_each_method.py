@@ -20,10 +20,10 @@ episodes_softmax = np.load(fname_softmax)
 
 plt.rcParams['xtick.direction'] = 'in'
 plt.rcParams['ytick.direction'] = 'in'
-plt.plot(np.arange(0, episode_num), episodes_eps_fix, ls='--', label='ε-greedy (ε fixed)', color='dodgerblue')
-plt.plot(np.arange(0, episode_num), episodes_eps_ren, ls=':', label='ε-greedy (ε renewed)', color='dodgerblue')
-plt.plot(np.arange(0, episode_num), episodes_la, ls='-',label='LQ', color='dodgerblue')
-plt.plot(np.arange(0, episode_num), episodes_softmax, ls='-',label='softmax (T = 8.0)', color='salmon')
+plt.plot(np.arange(0, episode_num), episodes_eps_fix, ls='--', label='ε-greedy (ε fixed)', color='royalblue')
+plt.plot(np.arange(0, episode_num), episodes_eps_ren, ls=':', label='ε-greedy (ε renewed)', color='royalblue')
+plt.plot(np.arange(0, episode_num), episodes_la, ls='-',label='LQ', color='royalblue')
+plt.plot(np.arange(0, episode_num), episodes_softmax, ls='-',label='softmax (T = 8.0)', color='tomato')
 #plt.plot(np.arange(0, step_num - 200), steps1[:300], color = 'dodgerblue')
 #plt.plot(np.arange(0, step_num - 200), steps2[:300], color = 'salmon')
 #plt.axhline(ave, ls = "-.", color = "slateblue")
