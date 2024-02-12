@@ -5,16 +5,16 @@ import numpy as np
 from matplotlib import pyplot as plt
 import csv
 
-episode_num = 100
-fname_eps_fix = './each_method/OptimalActionProbability_Ave_Epsilon01.npy'   #change when you need
-fname_eps_ren = './each_method/OptimalActionProbability_Ave_Epsilon_Co0.999.npy'   #change when you need
-fname_la = './each_method/OptimalActionProbability_Ave_LA_theta1.npy'   #change when you need
-fname_softmax = './each_method/OptimalActionProbability_Ave_Softmax_t8.0.npy'   #change when you need
+episode_num = 300
+fname_eps_fix = 'OptimalActionProbability_Ave_Epsilon0.1.npy'   #change when you need
+fname_eps_ren = 'OptimalActionProbability_Ave_Epsilon_Co0.999.npy'   #change when you need
+fname_la = 'OptimalActionProbability_Ave_LA_theta1.0.npy'   #change when you need
+#fname_softmax = 'OptimalActionProbability_Ave_Softmax_t8.0.npy'   #change when you need
 
 episodes_eps_fix = np.load(fname_eps_fix)
 episodes_eps_ren = np.load(fname_eps_ren)
 episodes_la = np.load(fname_la)
-episodes_softmax = np.load(fname_softmax)
+#episodes_softmax = np.load(fname_softmax)
 #firststep = np.zeros(firststep_num)
 #ave = np.mean(steps[101:])
 
@@ -23,7 +23,7 @@ plt.rcParams['ytick.direction'] = 'in'
 plt.plot(np.arange(0, episode_num), episodes_eps_fix, ls=':', label='ε-greedy (ε fixed)', color='royalblue', linewidth=2.0)
 plt.plot(np.arange(0, episode_num), episodes_eps_ren, ls='--', label='ε-greedy (ε renewed)', color='royalblue', linewidth=2.0)
 plt.plot(np.arange(0, episode_num), episodes_la, ls='-',label='LQ', color='royalblue', linewidth=2.0)
-plt.plot(np.arange(0, episode_num), episodes_softmax, ls='-',label='softmax (T = 8.0)', color='tomato', linewidth=2.0)
+#plt.plot(np.arange(0, episode_num), episodes_softmax, ls='-',label='softmax (T = 8.0)', color='tomato', linewidth=2.0)
 #plt.plot(np.arange(0, step_num - 200), steps1[:300], color = 'dodgerblue')
 #plt.plot(np.arange(0, step_num - 200), steps2[:300], color = 'salmon')
 #plt.axhline(ave, ls = "-.", color = "slateblue")
@@ -32,5 +32,5 @@ plt.plot(np.arange(0, episode_num), episodes_softmax, ls='-',label='softmax (T =
 plt.xlabel("episodes")
 plt.ylabel("optimal action selection rate")
 plt.legend()
-plt.savefig('compare_each_method_add_epsilonren.png')   #!change
+plt.savefig('compare_each_method_step100_episode300.png')   #!change
 plt.show()

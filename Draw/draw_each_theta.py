@@ -6,10 +6,10 @@ from matplotlib import pyplot as plt
 import csv
 
 episode_num = 100
-fname_theta1 = 'OptimalActionProbability_Ave_LA_theta1.npy'   #change when you need
-fname_theta2 = 'OptimalActionProbability_Ave_LA_theta2.npy'   #change when you need
-fname_theta5 = 'OptimalActionProbability_Ave_LA_theta5.npy'   #change when you need
-fname_theta10 = 'OptimalActionProbability_Ave_LA_theta10.npy'   #change when you need
+fname_theta1 = './each_theta/OptimalActionProbability_Ave_LA_theta1.npy'   #change when you need
+fname_theta2 = './each_theta/OptimalActionProbability_Ave_LA_theta2.npy'   #change when you need
+fname_theta5 = './each_theta/OptimalActionProbability_Ave_LA_theta5.npy'   #change when you need
+fname_theta10 = './each_theta/OptimalActionProbability_Ave_LA_theta10.npy'   #change when you need
 
 episodes_theta1 = np.load(fname_theta1)
 episodes_theta2 = np.load(fname_theta2)
@@ -20,10 +20,10 @@ episodes_theta10 = np.load(fname_theta10)
 
 plt.rcParams['xtick.direction'] = 'in'
 plt.rcParams['ytick.direction'] = 'in'
-plt.plot(np.arange(0, episode_num), episodes_theta1, ls='-', label='θ = 1', color='royalblue')
-plt.plot(np.arange(0, episode_num), episodes_theta2, ls='--', label='θ = 2', color='royalblue')
-plt.plot(np.arange(0, episode_num), episodes_theta5, ls=':', label='θ = 5', color='royalblue')
-plt.plot(np.arange(0, episode_num), episodes_theta10, ls='-.', label='θ = 10', color='royalblue')
+plt.plot(np.arange(0, episode_num), episodes_theta1, ls='-', label='θ = 1', color='royalblue', linewidth=2.0)
+plt.plot(np.arange(0, episode_num), episodes_theta2, ls='--', label='θ = 2', color='royalblue', linewidth=2.0)
+plt.plot(np.arange(0, episode_num), episodes_theta5, ls=':', label='θ = 5', color='royalblue', linewidth=2.0)
+plt.plot(np.arange(0, episode_num), episodes_theta10, ls='-.', label='θ = 10', color='royalblue', linewidth=2.0)
 #plt.plot(np.arange(0, step_num - 200), steps1[:300], color = 'royalblue')
 #plt.plot(np.arange(0, step_num - 200), steps2[:300], color = 'salmon')
 #plt.axhline(ave, ls = "-.", color = "slateblue")
