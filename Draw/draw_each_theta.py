@@ -31,6 +31,6 @@ plt.plot(np.arange(0, episode_num), episodes_theta10, ls='-.', label='θ = 10', 
 #plt.ylim(0, 1.0)
 plt.xlabel("episodes")
 plt.ylabel("optimal action selection rate")
-plt.legend()
-plt.savefig('compare_each_theta.png')   #change when you need
+plt.legend(prop={'size':16})
+plt.savefig('compare_each_theta_ult.png')   #change when you need
 plt.show()
