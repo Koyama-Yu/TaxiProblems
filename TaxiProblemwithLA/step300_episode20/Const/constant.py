@@ -8,9 +8,9 @@ import numpy as np
 const.STATE_NUM = 3 #状態1, 2, 3が街A, B, Cにいる状態 (プログラム上では0 or 1 or 2)
 const.ACT_NUM = 3 #1:通行人探し 2:タクスタ 3:無線(同上)
 const.NB_REPEAT = 50      #実験の繰り返し数
-const.NB_EPISODE = 100    # エピソード数
+const.NB_EPISODE = 20    # エピソード数
 const.NB_STEP = 300
-const.TAU = .5    # 温度
+const.EPSILON = .1    # 探索率
 const.ALPHA = .1      # 学習率
 const.GAMMA = .90     # 割引率
 const.ACTIONS = np.arange(const.ACT_NUM)    #行動集合
@@ -23,7 +23,8 @@ const.transit_prob = np.array(
         ],
         [   #時刻tで状態1
             [1/2, 0, 1/2],      #上と似た感じ
-            [1/16, 7/8, 1/16] 
+            [1/16, 7/8, 1/16],
+            [np.nan, np.nan, np.nan]    #行動2は遷移しない
         ],
         [   #時刻tで状態2
             [1/4, 1/4, 1/2],    #行動0をしたときの各状態の遷移確率
@@ -41,7 +42,8 @@ const.rewards = np.array(
         ],
         [   #時刻tで状態1
             [14, 0, 18], #上と似た感じ
-            [8, 16, 8] 
+            [8, 16, 8],
+            [np.nan, np.nan, np.nan]    #行動2は遷移しない
         ],
         [   #時刻tで状態2
             [10, 2, 8],     #行動0をしたときの各状態での利得
@@ -53,3 +55,7 @@ const.rewards = np.array(
 const.state_set = {'City A':0, 'City B':1, 'City C':2} 
 const.act_set = {'Find':0, 'Stand':1, 'Call':2}
 const.start_state = const.state_set['City A']
+const.LA_STATE_NUM = 200 #LA状態数
+const.THETA = 2.0   
+const.MAX_X = 150
+const.MIN_X = 100
